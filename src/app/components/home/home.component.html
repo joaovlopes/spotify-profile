@@ -1,0 +1,17 @@
+<!-- home.component.html -->
+<div class="p-6">
+  <h2 class="text-2xl font-bold mb-4">
+    Bem-vindo, {{ user?.display_name }}!
+  </h2>
+
+  <section>
+    <h3 class="text-xl mb-2">Suas playlists</h3>
+    <ul class="grid grid-cols-2 gap-4">
+      <li *ngFor="let p of playlists" class="p-4 border rounded-lg">
+        <img [src]="p.images[0]?.url" alt="{{ p.name }}" class="w-full h-32 object-cover mb-2 rounded" />
+        <strong>{{ p.name }}</strong>
+        <p>{{ p.tracks.total }} faixas</p>
+      </li>
+    </ul>
+  </section>
+</div>
