@@ -1,2 +1,7 @@
-<h1>Meu App</h1>
-<router-outlet></router-outlet>
+<div class="layout">
+  <app-sidebar *ngIf="showSidebar"></app-sidebar>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
