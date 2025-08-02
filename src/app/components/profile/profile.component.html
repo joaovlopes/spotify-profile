@@ -1,0 +1,34 @@
+<div class="profile-container">
+    <div class="user-profile">
+        <img *ngIf="user?.images?.length > 0" [src]="user.images[0].url" alt="User image" />
+
+        <div class="circle-user-image">
+            <i *ngIf="!user?.images?.length" class="fa-solid fa-user user-icon"></i>
+        </div>
+
+        <h2 class="user-name">
+            {{ user?.display_name }}
+        </h2>
+
+        <div class="user-info">
+            <div class="individuality-info">
+                <span>{{ user?.followers.total }}</span>
+                <p>followers</p>
+            </div>
+            <div class="individuality-info">
+                <span>{{ user?.followers.total }}</span>
+                <p>following</p>
+            </div>
+            <div class="individuality-info">
+                <span>{{ playlists?.length }}</span>
+                <p>playlists</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="logout-container">
+        <app-button (clicked)="logoutSpotify()">
+            logout
+        </app-button>
+    </div>
+</div>

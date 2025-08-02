@@ -1,0 +1,51 @@
+@import '/src/styles/variables.scss';
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10rem;
+
+    .user-profile {
+        width: 100%;
+        justify-items: center;
+
+        .circle-user-image {
+            width: fit-content;
+            border: solid 2px white;
+            border-radius: 50%;
+
+            .user-icon {
+                    font-size: 86px;
+                    padding: 30px 35px;
+            }
+        }
+    }
+
+    .user-name {
+        font-size: 26px;
+    }
+
+    .user-info {
+        display: flex;
+        gap: 25px;
+        text-align: center;
+
+        .individuality-info {
+            span {
+                color: $primary;
+                font-weight: 900;
+            }
+
+            p {
+                color: $light;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .logout-container {
+        margin-top: 1.5rem;
+    }
+}
