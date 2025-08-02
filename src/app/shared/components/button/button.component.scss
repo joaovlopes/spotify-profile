@@ -1,0 +1,19 @@
+@import '/src/styles/variables.scss';
+
+.custom-button {
+    background-color: transparent;
+    color: $white;
+    border: solid 1.5px $white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease;
+
+    &:hover {
+        background-color: $white;
+        color: $black;
+        cursor: pointer;
+    }
+}
