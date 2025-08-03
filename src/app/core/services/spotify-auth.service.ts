@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environments';
 export class SpotifyAuthService {
   private clientId = environment.spotifyClientId;
   private redirectUri = environment.spotifyRedirectUri;
-  private scope = 'user-read-private user-read-email';
+  private scope = environment.scopes;
   private codeVerifierKey = 'spotify_code_verifier';
 
   constructor(private http: HttpClient) {}
@@ -75,6 +75,24 @@ export class SpotifyAuthService {
     );
   }
 
+  getAuthorizationUrl = async (): Promise<string> => {
+    const codeVerifier = this.generateRandomString(128);
+    localStorage.setItem(this.codeVerifierKey, codeVerifier);
+
+    const codeChallenge = await this.generateCodeChallenge(codeVerifier);
+
+    const params = [
+      `response_type=code`,
+      `client_id=${encodeURIComponent(this.clientId)}`,
+      `scope=${encodeURIComponent(this.scope)}`,
+      `redirect_uri=${encodeURIComponent(this.redirectUri)}`,
+      `code_challenge_method=S256`,
+      `code_challenge=${encodeURIComponent(codeChallenge)}`,
+    ].join('&');
+
+    return `https://accounts.spotify.com/authorize?${params}`;
+  };
+
   getUserProfile(accessToken: string) {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${accessToken}`,
@@ -85,5 +103,10 @@ export class SpotifyAuthService {
 
   setToken(token: string) {
     localStorage.setItem('spotify_token', token);
+  }
+
+  logout() {
+    localStorage.clear();
+    window.location.href = '/';
   }
 }
