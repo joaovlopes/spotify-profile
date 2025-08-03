@@ -1,27 +1,58 @@
-# SpotifyProfile
+# 🎧 Spotify Profile App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+Este é um aplicativo desenvolvido com **Angular** que se conecta à **API do Spotify** para exibir estatísticas do usuário, como artistas mais ouvidos, faixas, playlists e dados de perfil. A proposta é oferecer uma interface visual moderna, responsiva e fácil de usar, com foco em usabilidade e performance.
 
-## Development server
+## 🛠️ Tecnologias Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Angular 17+](https://angular.io/)
+- [RxJS](https://rxjs.dev/)
+- [Font Awesome](https://fontawesome.com/)
+- SCSS (SASS)
+- NgRx (futuramente)
+- API do Spotify (OAuth2.0 PKCE Flow)
+- Ngrok (ambiente de testes local com túnel HTTPS)
 
-## Code scaffolding
+## 📂 Estrutura de Pastas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+src/
+├── app/
+│   ├── auth/               # Módulo e componentes de autenticação (login, callback)
+│   ├── components/         # Páginas principais (Profile, Top Artists, Top Tracks, etc)
+│   ├── core/               # Guards, interceptors e serviços principais
+│   ├── shared/             # Componentes reutilizáveis (como botões, cards, etc)
+│   │   └── components/
+│   ├── styles/             # SCSS global e variáveis
+│   ├── app.component.ts    # Componente principal
+│   └── app-routing.module.ts
+├── assets/                 # Imagens e logos
+└── environments/           # Variáveis de ambiente
+```
 
-## Build
+# 🔐 Autenticação com Spotify
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Este projeto utiliza o Authorization Code Flow com PKCE para autenticar o usuário no Spotify. Após o login, o app recebe um token que permite fazer chamadas autenticadas para a API do Spotify.
 
-## Running unit tests
+# 📈 Funcionalidades
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- ✅ Login com Spotify (PKCE)
+- ✅ Visualização do perfil do usuário
+- ✅ Lista dos artistas mais ouvidos
+- ✅ Lista de músicas mais ouvidas
+- ✅ Playlists do usuário
+- ✅ Faixas ouvidas recentemente
+- ✅ Design responsivo com SCSS
+- ✅ Navegação por sidebar com ícones
+- ✅ Componentização moderna com Angular
 
-## Running end-to-end tests
+# 🙋‍♂️ Autor
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Desenvolvido com 💚 por **João Victor Lopes Martins**
 
-## Further help
+<p align="left">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joaovlopesmartins@gmail.com" title="Gmail">
+  <img src="https://img.shields.io/badge/-Gmail-FF0000?style=flat-square&labelColor=FF0000&logo=gmail&logoColor=white&link=LINK-DO-SEU-GMAIL" alt="Gmail"/></a>
+  <a href="https://www.linkedin.com/in/joaovlopesmartins/" title="LinkedIn">
+  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=LINK-DO-SEU-LINKEDIN" alt="LinkedIn"/></a>
+</p>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
