@@ -26,5 +26,12 @@ export class SpotifyApiService {
     });
   }
 
+  /** Exemplo: lista de artistas seguidos */
+  getFollowingArtists(token: string): Observable<any> {
+    return this.http.get(`${this.apiBase}/me/following?type=artist`, {
+      headers: this.authHeaders(token),
+    });
+  }
+
   // Você pode adicionar aqui mais métodos: getRecentlyPlayed, getTopArtists, etc.
 }
