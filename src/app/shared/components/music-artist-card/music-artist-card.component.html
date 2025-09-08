@@ -1,0 +1,28 @@
+<div class="commum-styles-card" [ngClass]="variant === 'music' ? 'music-card' : 'artist-card'">
+    <div class="media-card-image">
+        <img [src]="imageUrl" alt="cover" class="cover-image" />
+        
+        <i class="fa-solid fa-circle-info icon-hover-image"></i>
+    </div>
+
+    <div class="media-card-content">
+        <div class="title-duration-container">
+            <p class="title">{{ variant === 'music' ? title : artist }}</p>
+
+            <span class="duration" *ngIf="variant === 'music' && duration">
+                {{ duration }}
+            </span>
+        </div>
+
+        <div class="subtitle-container">
+            <p class="subtitle" *ngIf="variant === 'music' && artist">
+                {{ artist }}
+            </p>
+
+            <p class="subtitle" *ngIf="variant === 'music' && album">
+                {{ album }}
+            </p>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,155 @@
+.commum-styles-card {
+    display: flex;
+
+    p {
+        margin: 0;
+    }
+
+    .media-card-image {
+        max-height: 50px;
+
+        .cover-image {
+            width: 50px;
+            height: 50px;
+        }
+
+        .icon-hover-image {
+            position: relative;
+            bottom: 37px;
+            left: 15px;
+            font-size: 20px;
+            display: none;
+        }
+    }
+
+    .media-card-image {
+        max-height: 50px;
+
+        .cover-image {
+            width: 50px;
+            height: 50px;
+        }
+
+        .icon-hover-image {
+            position: relative;
+            bottom: 37px;
+            left: 15px;
+            font-size: 20px;
+            display: none;
+        }
+    }
+
+    .media-card-content {
+        width: 100%;
+        align-self: center;
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .title-duration-container {
+            display: flex;
+            justify-content: space-between;
+
+            .title {
+                font-size: 16px;
+                font-weight: 600;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        transition: filter 0.3s ease;
+        cursor: pointer;
+
+        .media-card-image {
+            .cover-image {
+                filter: brightness(70%);
+            }
+
+            .icon-hover-image {
+                display: block;
+            }
+        }
+    }
+}
+
+.music-card {
+
+    .media-card-content {
+        width: 100%;
+        align-self: center;
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .title-duration-container {
+            display: flex;
+            justify-content: space-between;
+
+            .title {
+                font-size: 16px;
+                font-weight: 600;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                    cursor: pointer;
+                }
+            }
+
+            .duration {
+                font-size: 14px;
+                color: gray;
+                font-weight: 600;
+            }
+        }
+
+        .subtitle-container {
+            display: flex;
+            gap: 10px;
+
+                .subtitle {
+                font-size: 14px;
+                color: gray;
+                font-weight: 600;
+
+                &:first-child {
+                    display: flex;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 3px;
+                        height: 3px;
+                        background-color: gray;
+                        border-radius: 50%;
+                        align-self: center;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.artist-card {
+    .media-card-image {
+        .cover-image {
+            border-radius: 65%;
+        }
+    }
+
+    .media-card-content {
+        .subtitle-container {
+            display: none;
+        }
+    }
+}
