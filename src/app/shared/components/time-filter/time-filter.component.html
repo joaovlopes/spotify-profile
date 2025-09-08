@@ -1,0 +1,10 @@
+<div class="container-time-filter">
+  <div
+    class="time-filter-option"
+    *ngFor="let range of timeRanges"
+    [class.selected]="selectedOption === range.value"
+    (click)="selectOption(range.value)"
+  >
+    {{ range.label }}
+  </div>
+</div>
