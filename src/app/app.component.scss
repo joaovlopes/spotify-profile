@@ -1,0 +1,48 @@
+.layout {
+  display: flex;
+  
+}
+
+app-sidebar {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.content {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background-color: #181818; // exemplo
+  color: white;
+  padding: 20px 42px 0;
+  // align-content: center;
+  margin-bottom: 10rem;
+
+  &.login-content {
+    align-content: center;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    // padding: 20px;
+    margin-left: 6rem;
+
+    &.login-content {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    padding: 20px 5rem 0;
+    // margin-left: 6rem; // ajusta a margem para o tamanho da sidebar
+  }
+}

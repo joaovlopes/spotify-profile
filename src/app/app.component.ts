@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'spotify-profile';
-
+  isLoginRoute = false;
   showSidebar = true;
 
   constructor(private router: Router) {
@@ -21,5 +21,9 @@ export class AppComponent {
           event.urlAfterRedirects
         );
       });
+
+    this.router.events.subscribe(() => {
+      this.isLoginRoute = this.router.url === '/login';
+    });
   }
 }

@@ -12,9 +12,13 @@ import { TopTracksComponent } from './components/top-tracks/top-tracks.component
 import { RecentComponent } from './components/recent/recent.component';
 import { PlaylistsComponent } from './components/playlists/playlists.component';
 import { ButtonComponent } from './shared/components/button/button.component';
+import { TitleButtonComponent } from './shared/components/title-button/title-button.component';
+import { MusicArtistCardComponent } from './shared/components/music-artist-card/music-artist-card.component';
+import { TimeFilterComponent } from './shared/components/time-filter/time-filter.component';
+import { ArtistCoverComponent } from './shared/components/artist-cover/artist-cover.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SidebarComponent, ProfileComponent, TopArtistsComponent, TopTracksComponent, RecentComponent, PlaylistsComponent, ButtonComponent],
+  declarations: [AppComponent, HomeComponent, SidebarComponent, ProfileComponent, TopArtistsComponent, TopTracksComponent, RecentComponent, PlaylistsComponent, ButtonComponent, TitleButtonComponent, MusicArtistCardComponent, TimeFilterComponent, ArtistCoverComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
